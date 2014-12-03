@@ -10,7 +10,7 @@ class JWTEncodeCommand extends Command {
      *
      * @var string
      */
-    protected $name = 'jwtron:encode';
+    protected $name = 'jweetor:encode';
 
     /**
      * The console command description.

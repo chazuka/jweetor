@@ -11,19 +11,13 @@ return [
     'ttl' => 1440,
 
     // secret key
-    'secrets' => app('audiences')->secrets(),
+    'secrets' => 'Th3M4st3r0FUn1V3rSe',
 
-    // authenticator callback
+    // authenticator callback example
     'authenticator' => function ($claim)
     {
-        $audience = Auth::audience()->loginUsingId($claim->aud);
-        if ( ! $audience) throw new \Chazzuka\Jweetor\JWTException(403, 'Invalid audience credentials');
-
-        if (starts_with($claim->sub, 'user:'))
-        {
-            $id = (int) str_replace('user:', '', $claim->sub);
-            $user = Auth::loginUsingId($id);
-            if ( ! $user) throw new \Chazzuka\Jweetor\JWTException(403, 'Invalid user credentials');
-        }
+        $id = (int) str_replace('user:', '', $claim->sub);
+        $user = Auth::loginUsingId($id);
+        if ( ! $user) throw new \Chazzuka\Jweetor\JWTException(403, 'Invalid user credentials');
     },
 ];

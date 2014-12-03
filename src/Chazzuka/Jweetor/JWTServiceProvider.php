@@ -11,11 +11,11 @@ class JWTServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
-        $this->package('chazzuka/jwtron');
+        $this->package('chazzuka/jweetor');
 
         $this->app->bind('jwt', function ()
         {
-            $config = $this->app['config']->get('jwtron::jwt');
+            $config = $this->app['config']->get('jweetor::jwt');
 
             return new JWTAuthenticator($config);
 
