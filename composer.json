@@ -1,0 +1,27 @@
+{
+    "name": "chazzuka/jweetor",
+    "description": "laravel JWT authenticator",
+    "keywords": [
+        "php",
+        "laravel",
+        "auth",
+        "jwt"
+    ],
+    "homepage": "https://github.com/chazzuka/jweetor",
+    "license": "MIT",
+    "authors": [{
+        "name": "chz",
+        "email": "chazzuka@gmail.com"
+    }],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "5.0.*",
+        "firebase/php-jwt": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Chazzuka\\Jweetor\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
